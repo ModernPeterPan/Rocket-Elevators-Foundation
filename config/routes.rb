@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   post '/create_lead' => 'home#create_lead'
   get 'dropbox/auth' => 'dropbox#auth'
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'
+
+  get 'interventions/_form'
 end

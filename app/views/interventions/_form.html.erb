@@ -1,0 +1,13 @@
+<br>
+<br>
+<br>
+<br>
+
+<%= form_with(scope: "customer") do |form| %>
+    <%= form.select :id, @customers.map { |c| [c.name , c.id] } %>
+<%end%>
+
+<%= form_with(scope: "building") do |form| %>
+    <%= form.select :id, @buildings.map { |b| [b.id] } %>
+<%end%>
+
