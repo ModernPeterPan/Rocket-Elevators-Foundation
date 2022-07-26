@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   get 'dropbox/auth' => 'dropbox#auth'
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'
 
-  get 'interventions/_form'
+  get 'interventions/new' => 'interventions#new'
+  get 'interventions/get_building_by_client/:customer_id', to: 'interventions#get_building_by_client'
 end
