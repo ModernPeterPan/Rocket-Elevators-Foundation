@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_14_171106) do
+ActiveRecord::Schema.define(version: 2022_07_26_214300) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name", null: false
@@ -136,6 +136,23 @@ ActiveRecord::Schema.define(version: 2022_07_14_171106) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "interventions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "author"
+    t.integer "customer_id"
+    t.integer "building_id"
+    t.integer "battery_id"
+    t.integer "column_id"
+    t.integer "elevator_id"
+    t.integer "employee_id"
+    t.datetime "int_started_at"
+    t.datetime "int_ended_at"
+    t.string "result"
+    t.text "report"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "company_name"
@@ -163,7 +180,7 @@ ActiveRecord::Schema.define(version: 2022_07_14_171106) do
     t.integer "number_of_elevators"
     t.integer "maximum_occupancy"
     t.integer "business_hours"
-    t.date "date", default: "2022-07-17"
+    t.date "date", default: "2022-07-12"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
