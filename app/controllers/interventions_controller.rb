@@ -1,6 +1,6 @@
 class InterventionsController < ApplicationController
-   
-    # GET /interventions/show
+    before_action :authenticate_user!
+        # GET /interventions/show
     def index
         @customers = Customer.all
     end
@@ -14,6 +14,7 @@ class InterventionsController < ApplicationController
         @batteries = Battery.all
         @columns = Column.all
         @elevators = Elevator.all
+        @employees = Employee.all
     end
 
     def get_building_by_client
