@@ -9,48 +9,50 @@
 <br>
 
 <%= form_with(scope: "interventions") do |form| %>
+
+<%# <%= form_with url: interventions_create_path method: :post do |form| %>
+
     <div class="field1">
         <label>Customers</label>
-            <%= form.select :customer, @customers.map { |c| [c.name , c.id] }, 
-            {:include_blank => "-- Select Customer --"} %>
+        <%= form.select :customer, @customers.map { |c| [c.name , c.id] }, 
+        {:include_blank => "-- Select Customer --"} %>
     </div>
 
     <div class="field2">
         <label>Building ID</label>
-            <%= form.select :building, @buildings.map { |b| [b.id] } %>
+        <%= form.select :building, @buildings.map { |b| [b.id] } %>
     </div>
 
     <div class="field3">
         <label>Battery ID</label>
-            <%= form.select :battery, @batteries.map { |bat| [bat.id] } %>
+        <%= form.select :battery, @batteries.map { |bat| [bat.id] } %>
     </div>
 
     <div class="field4">
         <label>Column ID</label>
-            <%= form.select :column, @columns.map { |col| [col.id] } %>
+        <%= form.select :column, @columns.map { |col| [col.id] } %>
     </div>
 
     <div class="field5">
         <label>Elevator ID</label>
-            <%= form.select :elevator, @elevators.map { |e| [e.id] } %>
+        <%= form.select :elevator, @elevators.map { |e| [e.id] } %>
     </div>
 
     <div class="field6">
         <label>Employees</label>
-        <%# <%= form_with(scope: "employee") do |form| %>
-            <%= form.select :id, @employees.map { |em| [em.first_name + ' "' + em.title + '" ' + em.last_name , em.id] },
-            {:include_blank => "-- None --"} %>
-        <%# <%end%>
+        <%= form.select :employee, @employees.map { |em| [em.first_name + ' "' + em.title + '" ' + em.last_name , em.id] },
+        {:include_blank => "-- None --"} %>
     </div>
 
     <div class="field7">
         <label>Description</label>
-            <%= form.text_area :message, size: "70x5" %>
+        <%= form.text_area :description, size: "70x5" %>
     </div>
 
     <div class="field8">
-            <%= form.submit "submit" %>
+        <%= form.submit "submit" %>
     </div>
+
 <%end%>
 
 <script>

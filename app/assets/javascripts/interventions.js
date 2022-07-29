@@ -2,12 +2,12 @@
 $(function() {
 
     $($("select#interventions_customer")).change(function() {
-        console.log("customer id = " + $("select#interventions_customer").val())
+        console.log("customer id = " + $("select#interventions_customer :selected").val())
         $(".field2").show();
         $(".field3").hide();
         $(".field4").hide();
         $(".field5").hide();
-        setCustomerBuildings($("select#interventions_customer").val());
+        setCustomerBuildings($("select#interventions_customer :selected").val());
         // setBuildingBatteries($("select#building_id").val());
     })
 
@@ -38,7 +38,7 @@ $(function() {
         // setColumnElevators($("select#interventions_elevator").val());
     })
 
-    $($("select#employee_id")).change(function() {
+    $($("select#employee_employee")).change(function() {
         console.log("employee id = " + $("select#employee_id").val())
         setCustomerBuildings($("select#employee_id").val());
     })
@@ -65,7 +65,10 @@ function setCustomerBuildings(customer_id) {
         // Fill building
             row = "<option>-- Select Building --</option>";
             $(row).appendTo("select#interventions_building");
+            console.log("allo")
+            console.log(data)
             $.each(data, function(i, j) {
+                console.log("###" + j)
                 row = "<option value=\"" + j.id + "\">" + j.id + "</option>";
                 $(row).appendTo("select#interventions_building");
             });
