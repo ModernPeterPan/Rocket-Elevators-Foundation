@@ -14,6 +14,7 @@ class InterventionsController < ApplicationController
     end
     
     def new
+        @interventions = Intervention.new
         # @customers = Customer.new
         # @buildings = Building.new
         # @batteries = Battery.new
@@ -32,17 +33,17 @@ class InterventionsController < ApplicationController
         pp "HEY  LOOK   HEEREEE"
         @interventions = Intervention.new
         @interventions.author = warden.user.email
-        # @interventions.customer_id = params[:customer]
-        # @interventions.building_id = params[:building]
-        # @interventions.battery_id = params[:battery]
-        # @interventions.column_id = params[:column]
-        # @interventions.elevator_id = params[:elevator]
-        # @interventions.employee_id = params[:employee]
-        # @interventions.int_started_at = nil
-        # @interventions.int_ended_at = nil
-        # @interventions.result = "Incomplete"
-        # @interventions.report = params[:description]
-        # @interventions.status = "Pending"
+        @interventions.customer_id = params[:customer]
+        @interventions.building_id = params[:building]
+        @interventions.battery_id = params[:battery]
+        @interventions.column_id = params[:column]
+        @interventions.elevator_id = params[:elevator]
+        @interventions.employee_id = params[:employee]
+        @interventions.int_started_at = nil
+        @interventions.int_ended_at = nil
+        @interventions.result = "Incomplete"
+        @interventions.report = params[:description]
+        @interventions.status = "Pending"
         @interventions.save
         # @customers = Customer.all
     end

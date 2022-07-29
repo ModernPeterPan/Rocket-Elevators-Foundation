@@ -27,8 +27,8 @@ Rails.application.routes.draw do
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'
 
   #get 'interventions/index' => 'interventions#index'
-  #get 'interventions/new' => 'interventions#new'
-  #post 'interventions/create' => 'interventions#create'
+  get 'interventions/new' => 'interventions#new'
+  post 'interventions/new' => 'interventions#create'
   get 'interventions/get_building_by_client/:customer_id', to: 'interventions#get_building_by_client'
   get 'interventions/get_battery_by_building/:building_id', to: 'interventions#get_battery_by_building'
   get 'interventions/get_columns_by_battery/:battery_id', to: 'interventions#get_columns_by_battery'

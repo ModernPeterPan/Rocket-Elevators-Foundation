@@ -8,7 +8,7 @@
 
 <br>
 
-<%= form_with(scope: "interventions") do |form| %>
+<%= form_with(model: @intervention) do |form| %>
 
 <%# <%= form_with url: interventions_create_path method: :post do |form| %>
 
@@ -49,7 +49,8 @@
         <%= form.text_area :description, size: "70x5" %>
     </div>
 
-    <div class="field8">
+    <div class="field8" >
+        <%# <button type = "button" , class = "btn btn-primary",id = "submit">Submit</button> %>
         <%= form.submit "submit" %>
     </div>
 
